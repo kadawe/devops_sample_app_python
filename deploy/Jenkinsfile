@@ -67,6 +67,7 @@ pipeline {
         when { expression { return params.DEPLOY_WORKLOAD } }
         
         steps {
+            echo "Deploy workload"
             sshagent (credentials: ['aws_ec2_user_ssh']{
                 sh """#!/bin/bash
                     scp -o UserKnownFile=/dev/null -o StrictHostKeyChecking=no \
@@ -82,7 +83,6 @@ pipeline {
                          docker-compose -f docker-compose.yml up -d';
                 """        
             })
-            echo "Deploy workload"
         }
     }
   }
