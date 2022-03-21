@@ -108,5 +108,5 @@ pipeline {
 // //         message: "[Failed] Job:${env.JOB_NAME}, Build num:#${env.BUILD_NUMBER} @channel (<${env.RUN_DISPLAY_URL}|open job detail>)"
 // //       )
 // //     }
-// //   }
+    }
 }
