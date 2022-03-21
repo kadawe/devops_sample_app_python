@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'master' }
+  agent any //{ label 'master' }
 
   parameters {
     booleanParam(name : 'BUILD_DOCKER_IMAGE', defaultValue : true, description : 'BUILD_DOCKER_IMAGE')
@@ -37,7 +37,7 @@ pipeline {
         }
         post {
             always {
-                echo "Docker build success!!!"
+                echo "Docker build success!"
             }
         }
     }
