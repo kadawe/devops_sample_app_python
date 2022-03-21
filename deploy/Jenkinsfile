@@ -68,7 +68,7 @@ pipeline {
         
         steps {
             echo "Deploy workload"
-            sshagent (credentials: ['aws_ec2_user_ssh']{
+            sshagent (credentials: ['aws_ec2_user_ssh']){
                 sh """#!/bin/bash
                     scp -o UserKnownFile=/dev/null -o StrictHostKeyChecking=no \
                         deploy/docker-compose.yml \
@@ -82,7 +82,7 @@ pipeline {
                          docker-compose -f docker-compose.yml down; \
                          docker-compose -f docker-compose.yml up -d';
                 """        
-            })
+            }
         }
     }
   }
