@@ -150,3 +150,16 @@ cython_debug/
 # Mac
 .DS_Store
 tmp
+
+# Local .terraform directories
+.terraform
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Lock files
+.terraform.lock.hcl
